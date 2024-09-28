@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Search Clone</title>
+    <style>
+        /* General styling */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: white; /* Changed background to white */
+        }
+
+        /* Navbar styling for Gmail and Login buttons */
+        .navbar {
+            display: flex;
+            justify-content: flex-end;
+            padding: 10px 20px;
+        }
+
+        .navbar a {
+            color: #5f6368;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 14px;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        /* Centering search container */
+        .search-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: calc(100vh - 50px); /* Leaves space for the top bar */
+        }
+
+        .search-container img {
+            width: 250px;
+            height: auto;
+        }
+
+        /* Search bar styling */
+        .search-bar {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 0;
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: white;
+            border-radius: 50px;
+            padding: 5px;
+            box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+        }
+
+        .search-bar input[type="text"] {
+            padding: 10px;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .search-bar button {
+            background-color: #4285f4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        /* Responsive design */
+        @media screen and (max-width: 768px) {
+            .search-bar {
+                max-width: 100%;
+            }
+
+            .search-bar input[type="text"] {
+                font-size: 14px;
+            }
+
+            .search-bar button {
+                padding: 8px 16px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar with links for Gmail and Login -->
+    <div class="navbar">
+        <a href="#">Gmail</a>
+        <a href="#">Login</a> <!-- Placeholder for the login button -->
+    </div>
+
+    <!-- Search container with Google logo and search bar -->
+    <div class="search-container">
+        <!-- Google logo image -->
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo">
+
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <input type="text" placeholder="Search Google or type a URL">
+            <button type="submit">Search</button>
+        </div>
+    </div>
+
+</body>
+</html>
