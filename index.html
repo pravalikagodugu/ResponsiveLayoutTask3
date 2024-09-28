@@ -16,6 +16,7 @@
             background-repeat: no-repeat;
             background-attachment: fixed;
             position: relative; /* Make sure relative positioning works */
+            padding: 20px; /* Padding for body */
         }
 
         /* Navbar styling for Gmail and Login buttons */
@@ -42,7 +43,7 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            height: calc(100vh - 50px); /* Leaves space for the top bar */
+            height: calc(100vh - 100px); /* Leaves space for the top bar and ads */
         }
 
         .search-container img {
@@ -84,27 +85,47 @@
         /* Advertisement styling */
         .ad-container {
             position: absolute; /* Position it absolutely within the body */
-            top: 50%; /* Center vertically */
-            right: 0; /* Align to the right */
-            transform: translateY(-50%); /* Adjust to center properly */
+            top: 20px; /* Position from the top */
+            left: 0;
+            right: 0; /* Center the ads horizontally */
+            display: flex; /* Use flexbox for layout */
+            justify-content: space-between; /* Space ads to the sides */
+            padding: 0 20px; /* Padding for ads */
         }
 
         .ad {
-            width: 25vw; /* 25% of the viewport width */
-            margin: 10px 0;
             border-radius: 10px;
             padding: 15px;
-            color: brown; /* Brown text for the peach background */
             box-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+            color: brown; /* Default text color for Chrome ad */
         }
 
-        .ad.pink {
-            background-color: peachpuff; /* Peach color */
+        .ad.scholar {
+            width: 35%; /* Wider and shorter ad for Scholar */
+            background-color: #f0f8ff; /* Light background for Scholar */
+            margin-top: 0; /* Align to the top */
+            padding: 10px;
         }
 
-        .ad.sea-blue {
-            background-color: #007bbf; /* Sea blue color */
-            width: 20vw; /* 20% of the viewport width */
+        .ad.chrome {
+            width: 30%; /* Smaller and taller ad for Chrome */
+            background-color: lightyellow; /* Light yellow background for Chrome */
+            margin-top: 30px; /* Lower position for Chrome ad */
+            padding: 10px;
+        }
+
+        /* Follow link styles */
+        .follow-link {
+            display: block; /* Make follow link block for spacing */
+            margin-top: 10px; /* Space above the link */
+        }
+
+        .follow-link.scholar {
+            color: blue; /* Blue for Scholar link */
+        }
+
+        .follow-link.chrome {
+            color: darkorange; /* Dark orange for Chrome link */
         }
 
         /* Responsive design */
@@ -126,7 +147,13 @@
             }
 
             .ad-container {
-                top: 30%; /* Adjust position for smaller screens */
+                flex-direction: column; /* Stack ads vertically */
+                align-items: center; /* Center ads */
+            }
+
+            .ad {
+                width: 90%; /* Full width for smaller screens */
+                margin: 10px 0; /* Space between ads */
             }
         }
 
@@ -144,18 +171,16 @@
             }
 
             .ad-container {
-                width: 80%; /* Adjust the ad container width for smaller screens */
-                top: 20%; /* Adjust position for smaller screens */
+                top: 10px; /* Adjust position for smaller screens */
             }
         }
-
     </style>
 </head>
 <body>
 
-    <!-- Navbar with links for Gmail and Login -->
+    <!-- Navbar with links for Gmail and Login buttons -->
     <div class="navbar">
-        <a href="#">Gmail</a>
+        <a href="https://accounts.google.com/v3/signin/identifier?ifkv=ARpgrqfOjqe_JINQ-DnIYDIxu7dSZBDMV4_IrfibjmDTxCcJrxg4kFxMBpcbjpmQAvIZPBETLa5Vhg&service=mail&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S1797799226%3A1727556718670297&ddm=0">Gmail</a>
         <a href="#">Login</a> <!-- Placeholder for the login button -->
     </div>
 
@@ -174,19 +199,17 @@
     <!-- Advertisement Container -->
     <div class="ad-container">
         <!-- First Advertisement for Google Scholar -->
-        <div class="ad pink">
-            <a href="https://scholar.google.com/">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Google_Scholar_logo.svg" alt="Google Scholar Logo" style="width: 100%; height: auto; border-radius: 5px;">
-            </a>
-            <p>Unlock a world of knowledge with Google Scholar! Whether you're a student, researcher, or curious mind, access millions of academic papers, theses, and scholarly articles in seconds. Stay ahead with citations, alerts, and comprehensive research tools—your gateway to cutting-edge discoveries awaits. Dive into brilliance today!</p>
+        <div class="ad scholar">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Google_Scholar_logo.svg" alt="Google Scholar Logo" style="width: 100%; height: auto; border-radius: 5px;">
+            <p style="font-size: 14px;">Unlock a world of knowledge with Google Scholar! Access millions of academic papers, theses, and scholarly articles in seconds.</p>
+            <a class="follow-link scholar" href="https://scholar.google.com/">Follow link</a>
         </div>
 
         <!-- Second Advertisement for Chrome -->
-        <div class="ad sea-blue">
-            <a href="https://www.google.com/chrome/">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Google_Chrome_icon.svg" alt="Chrome Logo" style="width: 100%; height: auto; border-radius: 5px;">
-            </a>
-            <p>Use Chrome for the best exploration!</p>
+        <div class="ad chrome">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Google_Chrome_icon.svg" alt="Chrome Logo" style="width: 100%; height: auto; border-radius: 5px;">
+            <p style="font-size: 16px;">Use Chrome for the best exploration!</p>
+            <a class="follow-link chrome" href="https://www.google.com/chrome/">Follow link</a>
         </div>
     </div>
 
