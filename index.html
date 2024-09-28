@@ -15,6 +15,7 @@
             background-position: center;
             background-repeat: no-repeat;
             background-attachment: fixed;
+            position: relative; /* Make sure relative positioning works */
         }
 
         /* Navbar styling for Gmail and Login buttons */
@@ -80,6 +81,32 @@
             font-size: 16px;
         }
 
+        /* Advertisement styling */
+        .ad-container {
+            position: absolute; /* Position it absolutely within the body */
+            top: 50%; /* Center vertically */
+            right: 0; /* Align to the right */
+            transform: translateY(-50%); /* Adjust to center properly */
+        }
+
+        .ad {
+            width: 25vw; /* 25% of the viewport width */
+            margin: 10px 0;
+            border-radius: 10px;
+            padding: 15px;
+            color: brown; /* Brown text for the peach background */
+            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        .ad.pink {
+            background-color: peachpuff; /* Peach color */
+        }
+
+        .ad.sea-blue {
+            background-color: #007bbf; /* Sea blue color */
+            width: 20vw; /* 20% of the viewport width */
+        }
+
         /* Responsive design */
         @media screen and (max-width: 768px) {
             .search-bar {
@@ -97,6 +124,10 @@
             .search-container img {
                 width: 200px; /* Smaller logo for smaller screens */
             }
+
+            .ad-container {
+                top: 30%; /* Adjust position for smaller screens */
+            }
         }
 
         @media screen and (max-width: 480px) {
@@ -110,6 +141,11 @@
 
             .search-bar button {
                 padding: 6px 12px;
+            }
+
+            .ad-container {
+                width: 80%; /* Adjust the ad container width for smaller screens */
+                top: 20%; /* Adjust position for smaller screens */
             }
         }
 
@@ -132,6 +168,25 @@
         <div class="search-bar">
             <input type="text" placeholder="Search Google or type a URL">
             <button type="submit">Search</button>
+        </div>
+    </div>
+
+    <!-- Advertisement Container -->
+    <div class="ad-container">
+        <!-- First Advertisement for Google Scholar -->
+        <div class="ad pink">
+            <a href="https://scholar.google.com/">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Google_Scholar_logo.svg" alt="Google Scholar Logo" style="width: 100%; height: auto; border-radius: 5px;">
+            </a>
+            <p>Unlock a world of knowledge with Google Scholar! Whether you're a student, researcher, or curious mind, access millions of academic papers, theses, and scholarly articles in seconds. Stay ahead with citations, alerts, and comprehensive research tools—your gateway to cutting-edge discoveries awaits. Dive into brilliance today!</p>
+        </div>
+
+        <!-- Second Advertisement for Chrome -->
+        <div class="ad sea-blue">
+            <a href="https://www.google.com/chrome/">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Google_Chrome_icon.svg" alt="Chrome Logo" style="width: 100%; height: auto; border-radius: 5px;">
+            </a>
+            <p>Use Chrome for the best exploration!</p>
         </div>
     </div>
 
