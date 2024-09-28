@@ -9,7 +9,12 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: white; /* Changed background to white */
+            height: 100vh;
+            background-image: url("https://upload.wikimedia.org/wikipedia/commons/d/d0/Googleplex_Welcome_Sign.jpg"); /* Wikimedia image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
         }
 
         /* Navbar styling for Gmail and Login buttons */
@@ -87,6 +92,24 @@
 
             .search-bar button {
                 padding: 8px 16px;
+            }
+
+            .search-container img {
+                width: 200px; /* Smaller logo for smaller screens */
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .search-container img {
+                width: 150px; /* Smaller logo for phone screens */
+            }
+
+            .search-bar input[type="text"] {
+                font-size: 12px;
+            }
+
+            .search-bar button {
+                padding: 6px 12px;
             }
         }
 
